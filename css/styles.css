@@ -5,16 +5,16 @@
 }
 
 html {
-    font-size: 62.5%;
+
     font-family: sans-serif;
-    width: 100%;
-    height: 100%;
+    font-size: 62.5%;
 }
 
 body {
     width: 100%;
     height: 100%;
     padding-right: 10px;
+
 }
 
 /* ============================================== Header ============================================== */
@@ -22,9 +22,8 @@ header {
     display: flex;
     height: 7vh;
     width: 100%;
-    justify-content: flex-end;
     align-items: center;
-    justify-items: center;
+    justify-content: flex-end;
 }
 
 header a {
@@ -70,6 +69,7 @@ nav {
 nav ul {
     display: none;
     width: 1px;
+    background-color: #fefefe;
     
 }
 
@@ -101,6 +101,7 @@ nav ul li a {
 
 /* ============================================== Main ============================================== */
 main{
+    width: 100%;
     display: grid;
     height: 81vh;
     grid-template-rows: 35% 75px 50px;
@@ -109,7 +110,7 @@ main{
 }
 .search{
     display: grid;
-    width: 582px;
+    width: 70%;
     justify-items: center;
     grid-template-columns: 14px 100% 14px;
     align-items: center;
@@ -143,7 +144,9 @@ main figure {
 }
 
 main figure img {
-    width: 272px;
+    width: 30%;
+    min-width: 222px;
+    max-width: 572px;
     justify-self: center;
 }
 
@@ -177,42 +180,49 @@ main div {
 /* ============================================== Footer ============================================== */
 footer{
     color:rgba(0,0,0,.54);
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    justify-content: space-between;
+    display: block;
     background-color: #f2f2f2;
     height: 12vh;
     padding: 15px 30px;
+    width: 100%;
 }
 
 footer a{
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     color: #70757a;
     text-decoration: none;
-    padding-right: 20px;
+    display: block;
+    text-align: center;
 }
 
+
 .chile p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: start;
-    width: 100%;
     
 }
 .chile{
-    grid-column-end: span 2;
-    border-bottom: 1px solid #dadce0;;
+    border-bottom: 1px solid #dadce0;
+    width: 100%;
 }
 
+.container-footer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+
+}
 .footer1{
+    display: flex;
     padding-top: 10px;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    width: 40%;
 }
 
 .footer2{
+    width: 20%;
+    display: flex;
     padding-top: 10px;
-    justify-self: end;
 }
 
 /* ============================================== animaciones ============================================== */
@@ -249,4 +259,33 @@ nav ul li:hover{
 
 footer div a:hover{
     text-decoration: underline;
+}
 /* ============================================== Efectos ============================================== */
+
+@media (min-width: 600px){
+  
+    .search{
+        display: grid;
+        width: 582px;
+        justify-items: center;
+        grid-template-columns: 14px 100% 14px;
+        align-items: center;
+    }
+
+    footer a{
+        width: 50%;
+        display: block;
+        font-size: 1.4rem;
+        color: #70757a;
+        text-decoration: none;
+        padding-right: 20px;
+    }
+    
+    .chile p {
+        font-size: 1.5rem;
+        text-align: start;
+        width: 100%;
+        display: block;
+        
+    
+}  
