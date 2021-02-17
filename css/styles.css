@@ -7,16 +7,24 @@
 html {
     font-size: 62.5%;
     font-family: sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    padding-right: 10px;
 }
 
 /* ============================================== Header ============================================== */
 header {
-    display: grid;
-    grid-template-columns: 70px 70px 70px 0px 120px 30px;
+    display: flex;
     height: 7vh;
-    align-items: center;
-    justify-content:flex-end;
     width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    justify-items: center;
 }
 
 header a {
@@ -24,6 +32,7 @@ header a {
     color:rgba(0,0,0,0.87);
     text-decoration: none;
     text-align: center;
+    padding: 10px;
 }
 
 
@@ -33,8 +42,7 @@ header input {
     color: white;
     font-size: 1.4rem;
     border-radius: 5px;
-    width: 120px;
-    margin-right: 210px;
+    width: 120px;;
     cursor: pointer;
     border: 1px solid transparent;
     font-family: 'Open Sans', 'Roboto', sans-serif;
@@ -42,6 +50,7 @@ header input {
 
 header label {
     justify-self: center;
+    padding: 10px;
 }
 header label img {
     width: 16px;
@@ -54,13 +63,13 @@ a + input {
 }
 
 nav {
-    width: 15vw;
     background-color: #fefefe;
 
     
 }
 nav ul {
     display: none;
+    width: 1px;
     
 }
 
@@ -96,7 +105,6 @@ main{
     height: 81vh;
     grid-template-rows: 35% 75px 50px;
     align-items: center;
-    justify-content: center;
     justify-items: center;
 }
 .search{
@@ -238,4 +246,7 @@ nav ul li:hover{
     cursor: pointer;
     background-color: rgba(41, 98, 255, .10);
 }
+
+footer div a:hover{
+    text-decoration: underline;
 /* ============================================== Efectos ============================================== */
