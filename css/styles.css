@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: sans-serif;
+}
+
+/* ============================================== Header ============================================== */
+header {
+    display: grid;
+    grid-template-columns: 70px 70px 70px 0px 120px 30px;
+    height: 7vh;
+    align-items: center;
+    justify-content:flex-end;
+    width: 100%;
+}
+
+header a {
+    font-size: 1.3rem;
+    color:rgba(0,0,0,0.87);
+    text-decoration: none;
+    text-align: center;
+}
+
+
+header input {
+    height: 36px;
+    background-color: rgb(26, 115, 232);
+    color: white;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    width: 120px;
+    margin-right: 210px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-family: 'Open Sans', 'Roboto', sans-serif;
+}
+
+header label {
+    justify-self: center;
+}
+header label img {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+a + input {
+    display: none;
+}
+
+nav {
+    width: 15vw;
+    background-color: #fefefe;
+
+    
+}
+nav ul {
+    display: none;
+    
+}
+
+nav ul li {
+    display: grid;
+    grid-template-rows: 40px 20px;
+    grid-template-columns: 100px;
+    justify-items: center;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+    list-style: none;
+}
+
+nav ul li img {
+    width: 30px;
+    height: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.4rem;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+
+}
+
+/* ============================================== Main ============================================== */
+main{
+    display: grid;
+    height: 81vh;
+    grid-template-rows: 35% 75px 50px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+.search{
+    display: grid;
+    width: 582px;
+    justify-items: center;
+    grid-template-columns: 14px 100% 14px;
+    align-items: center;
+}
+
+.lupita{
+    margin-left: 66px;
+    width: 20px;
+    height: 20px;
+}
+
+.buscador { 
+    width: 100%;
+    height: 46px;
+    border-radius: 30px;
+    border: 1px solid #dadce0;
+    background-color: transparent;
+}
+
+.search-voice {
+    width: 16px;
+    height: 20px;
+    margin-left: -45px;
+}
+
+main figure {
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+       
+}
+
+main figure img {
+    width: 272px;
+    justify-self: center;
+}
+
+
+
+main div {
+    
+}
+
+.nav-button{
+    display: flex;
+    padding-right: 30px;
+    
+}
+
+.nav-button input{
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 10px;
+    width: 160px;
+    color: #3c4043;
+    height: 36px;
+    padding: 0 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+}
+
+
+
+
+/* ============================================== Footer ============================================== */
+footer{
+    color:rgba(0,0,0,.54);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+    height: 12vh;
+    padding: 15px 30px;
+}
+
+footer a{
+    font-size: 1.4rem;
+    color: #70757a;
+    text-decoration: none;
+    padding-right: 20px;
+}
+
+.chile p {
+    font-size: 1.5rem;
+    text-align: start;
+    width: 100%;
+    
+}
+.chile{
+    grid-column-end: span 2;
+    border-bottom: 1px solid #dadce0;;
+}
+
+.footer1{
+    padding-top: 10px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.footer2{
+    padding-top: 10px;
+    justify-self: end;
+}
+
+/* ============================================== animaciones ============================================== */
+
+#btn-menu:checked ~ nav ul{
+    margin-left: -200px;
+    margin-top: 50px;
+    position: absolute;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 80px 80px 80px;
+    grid-template-rows: 60px 60px 60px;
+    grid-auto-columns: 80px 80px 80px;
+    grid-auto-rows: 60px 60px 60px;
+    justify-items: center;
+    position: absolute;
+    max-height: 400px;
+    overflow: auto;
+    border: 1px solid rgba(128, 128, 128,.2);
+    border-radius: 5px;
+    width: 300px;
+    box-sizing: content-box;
+    
+}
+
+input:active .buscador{ 
+    border: 1px solid red;
+}
+
+nav ul li:hover{
+    cursor: pointer;
+    background-color: rgba(41, 98, 255, .10);
+}
+/* ============================================== Efectos ============================================== */
