@@ -24,6 +24,7 @@ header {
     width: 100%;
     align-items: center;
     justify-content: flex-end;
+    column-gap: 5px;
 }
 
 header a {
@@ -35,7 +36,7 @@ header a {
 }
 
 
-header input {
+header .iniciar-sesion {
     height: 36px;
     background-color: rgb(26, 115, 232);
     color: white;
@@ -57,36 +58,50 @@ header label img {
     cursor: pointer;
 }
 
-a + input {
-    display: none;
+.btn-menu {
+    background-image: url('../images/apps.png');
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position: center;
+    outline:none;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 nav {
+    position: relative;
     background-color: #fefefe;
 
     
 }
-nav ul {
+.menu {
     display: none;
     width: 1px;
-    background-color: #fefefe;
-    
+    background-color: #fefefe;      
+}
+
+.active {
+    display: grid;
 }
 
 nav ul li {
     display: grid;
-    grid-template-rows: 40px 20px;
-    grid-template-columns: 100px;
+    grid-template-rows: 1fr 20px;
+    grid-template-columns: 96px;
     justify-items: center;
     align-items: center;
     border-radius: 5px;
     overflow: hidden;
     list-style: none;
+    scroll-snap-align: center;
+   
 }
-
 nav ul li img {
-    width: 30px;
-    height: 30px;
+    width: 46px;
+    height: 46px;
 }
 
 nav ul li a {
@@ -109,31 +124,45 @@ main{
     justify-items: center;
 }
 .search{
-    display: grid;
-    width: 70%;
+    display: flex;
+    width: 520px;
     justify-items: center;
-    grid-template-columns: 14px 100% 14px;
     align-items: center;
+    border: 1px solid #dadce0;
+    border-radius: 30px;
+    height: 46px;
+    box-sizing: content-box;
+}
+
+.search span{
+    width: 30px;
+    padding-left: 10px;
 }
 
 .lupita{
-    margin-left: 66px;
     width: 20px;
     height: 20px;
+
 }
 
 .buscador { 
-    width: 100%;
-    height: 46px;
-    border-radius: 30px;
-    border: 1px solid #dadce0;
+    font-size: 1.6rem;
+    padding-left: 10px;
+    width: 460px;
+    border: none;
     background-color: transparent;
+    outline: none;
 }
 
+.search a{
+    padding-right: 10px;
+}
 .search-voice {
+    background-image: url(../images/voice.png);
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 16px;
     height: 20px;
-    margin-left: -45px;
 }
 
 main figure {
@@ -150,8 +179,6 @@ main figure img {
     justify-self: center;
 }
 
-
-
 main div {
     
 }
@@ -165,7 +192,7 @@ main div {
 .nav-button input{
     background-color: #f8f9fa;
     border: 1px solid #f8f9fa;
-    border-radius: 10px;
+    border-radius: 5px;
     width: 160px;
     color: #3c4043;
     height: 36px;
@@ -227,26 +254,36 @@ footer a{
 
 /* ============================================== animaciones ============================================== */
 
-#btn-menu:checked ~ nav ul{
-    margin-left: -200px;
-    margin-top: 50px;
+.active{
+    margin-left: -220px;
+    margin-top: 40px;
     position: absolute;
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 80px 80px 80px;
-    grid-template-rows: 60px 60px 60px;
-    grid-auto-columns: 80px 80px 80px;
-    grid-auto-rows: 60px 60px 60px;
+    grid-gap: 5px;
+    grid-template-columns: 96px 96px 96px;
+    grid-template-rows: 96px 96px 96px;
+    grid-auto-columns: 96px 96px 96px;
+    grid-auto-rows: 96px 96px 96px;
     justify-items: center;
     position: absolute;
     max-height: 400px;
-    overflow: auto;
     border: 1px solid rgba(128, 128, 128,.2);
     border-radius: 5px;
-    width: 300px;
+    width: 328px;
     box-sizing: content-box;
-    
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+    scroll-snap-type: y proximity; 
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+    padding: 0 0 0 14px;
 }
+
+.btn-menu:hover,
+    .btn-active{
+    background-color: rgba(95,99,104,0.10);
+    border-radius: 50%;
+}
+
 
 input:active .buscador{ 
     border: 1px solid red;
@@ -260,15 +297,33 @@ nav ul li:hover{
 footer div a:hover{
     text-decoration: underline;
 }
+
+.search:hover, 
+.search:focus-within{
+    box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
+    border-color: rgba(223,225,229,0);
+}
+
+.search:{
+    
+}
+
+
+.nav-button input:hover{
+    border: 1px solid #c6c6c6;
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+    color: #222;
+    background-color: #f8f8f8;
+    cursor:pointer;
+}
 /* ============================================== Efectos ============================================== */
 
 @media (min-width: 600px){
   
     .search{
-        display: grid;
-        width: 582px;
+        display: flex;
+        width: 520px;
         justify-items: center;
-        grid-template-columns: 14px 100% 14px;
         align-items: center;
     }
 

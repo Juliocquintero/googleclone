@@ -16,10 +16,9 @@
         
         <a href="#">Gmail</a>
         <a href="">Imágenes</a>
-        <input class="btn-menu" type="checkbox" name="btn-menu" id="btn-menu">
-        <label for="btn-menu"> <img src="./images/apps.png" alt=""> </label>
+        <input class="btn-menu" name="btn-menu" id="btn-menu" type="button"> 
         <nav>
-            <ul>
+            <ul class="menu" id="menu">
                 <li> 
                     <img src="./images/cuenta.png" alt="">
                     <a href=""> Cuenta </a>
@@ -159,16 +158,16 @@
                 </li>
             </ul>
         </nav>
-        <input type="button" value="Iniciar sesión">
+        <input class="iniciar-sesion" type="button" value="Iniciar sesión">
     </header>
     <main>
             <figure>
               <img src="./images/google.png" alt="">
             </figure>
                 <div class="search"> 
-                    <img  class="lupita" src="./images/search-icon.png" alt="">
+                    <span> <img class="lupita" src="./images/search-icon.png" alt=""></span>
                     <input class="buscador" type="text">
-                    <a href=""><img class="search-voice" src="./images/voice.png" alt=""></a>
+                    <a class="search-voice" href=""></a>
                 </div>
                 <div class="nav-button">
                     <input type="button" value="Buscar con Google">
@@ -197,6 +196,49 @@
         </div>
     </div>
     </footer>
+
+    <script>       
+        // var activarBoton = function(){
+        //     var menu = document.getElementById("menu"),
+        //         boton = document.getElementById("btn-menu");
+        
+        //     if (menu.className == "menu"){
+        //         menu.className = "menu active";
+        //         boton.className ="btn-menu btn-active"
+                
+        //     } else {
+        //         menu.className = "menu";
+        //         boton.className ="btn-menu"
+        //     }
+        // }
+        (function () {
+            var menu = document.getElementById ("menu");
+            var boton = document.getElementById ("btn-menu");
+            
+            boton.addEventListener("click", function() {
+                if (menu.className == "menu"){
+                    menu.className = "menu active";
+                    boton.className = "btn-menu btn-active"}
+                    else {
+                     menu.className = "menu";
+                     boton.className = "btn-menu"}
+            })
+
+            boton.addEventListener ("blur", function () {
+                menu.className = "menu";
+                boton.className = "btn-menu"
+            }); 
+        }())
+
+        // (function () {
+        //     var evento = function (e) {
+        //         console.log('Este evento es de tipo: ' + e.type);
+        //     };    
+        //         var boton = document.getElementById("btn-menu");
+        //         boton.addEventListener ("blur", evento);        
+            
+        // }())
+    </script>
 
 </body>
 </html>
