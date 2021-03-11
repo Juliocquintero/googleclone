@@ -20,7 +20,7 @@
         <nav>
             <ul class="menu" id="menu">
                 <li> 
-                    <img src="./images/cuenta.png" alt="">
+                    <img src="./images/cuenta.png" id="cuenta-img" alt="">
                     <a href=""> Cuenta </a>
                 </li>
                 <li>
@@ -158,9 +158,12 @@
                 </li>
             </ul>
         </nav>
-        <input class="iniciar-sesion" type="button" value="Iniciar sesión">
+        <input class="iniciar-sesion" type="button" value="Iniciar sesión" id="login">
+        <figure class="usuario" id="usuario">
+            <img src="https://lh3.googleusercontent.com/ogw/ADGmqu8RBPATuTqtKFQR_06tjEpIiqhsHELUbzO6AwwaJA=s83-c-mo" alt="">
+        </figure>
     </header>
-    <main>
+    <main id="main">
             <figure>
               <img src="./images/google.png" alt="">
             </figure>
@@ -179,22 +182,21 @@
         <div class="chile"> 
             <p> Chile </p>
         </div>
+
         <div class="container-footer">
+            <ul class="footer1">
+                <li> <a href=""> Sobre Google </a></li>
+                <li> <a href=""> Publicidad </a></li>
+                <li> <a href=""> Negocios </a></li>
+                <li> <a href=""> Cómo funciona la Búsqueda </a></li>
+            </ul>
 
-
-        <div class="footer1">
-            <a href=""> Sobre Google </a>
-            <a href=""> Publicidad </a>
-            <a href=""> Negocios </a>
-            <a href=""> Cómo funciona la Búsqueda </a>
+            <ul class="footer2">
+                <li><a href=""> Privacidad </a></li>
+                <li><a href=""> Condiciones </a></li>
+                <li><a href=""> Preferencias </a></li>
+            </ul>
         </div>
-
-        <div class="footer2">
-            <a href=""> Privacidad </a>
-            <a href=""> Condiciones </a>
-            <a href=""> Preferencias </a>
-        </div>
-    </div>
     </footer>
 
     <script>       
@@ -214,6 +216,7 @@
         (function () {
             var menu = document.getElementById ("menu");
             var boton = document.getElementById ("btn-menu");
+            var main = document.getElementById ("main");
             
             boton.addEventListener("click", function() {
                 if (menu.className == "menu"){
@@ -224,11 +227,27 @@
                      boton.className = "btn-menu"}
             })
 
-            boton.addEventListener ("blur", function () {
+            main.addEventListener ("click", function () {
                 menu.className = "menu";
                 boton.className = "btn-menu"
             }); 
         }())
+
+        var mostrarimagen = function () {
+            var login = document.getElementById("login");
+            var userImg = document.getElementById("usuario");
+            var menu = document.getElementById("menu");
+            var cuentaImg = document.getElementById ("cuenta-img");
+
+            login.addEventListener("click", function() {
+                userImg.style.display = "block";
+                login.style.display = "none";
+                // menu.style.marginLeft = "-220px"
+                cuentaImg.setAttribute ("src", "https://lh3.googleusercontent.com/ogw/ADGmqu8RBPATuTqtKFQR_06tjEpIiqhsHELUbzO6AwwaJA=s83-c-mo");
+                cuentaImg.style.borderRadius = "50%";
+            });
+        };
+        mostrarimagen();
 
         // (function () {
         //     var evento = function (e) {
